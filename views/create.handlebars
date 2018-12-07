@@ -1,0 +1,34 @@
+<h1>Enter a new team</h1>
+<article>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <form method="POST" action="/create">
+        <div class="input-field">
+            <label>Team Name:</label>
+            <input type="text" name="Name" size="50" placeholder="Team Name...">
+        </div>
+         <div class="input-field">
+            <label>Sport:</label>
+            <input type="text" name="Sport" size="25" placeholder="Sport...">
+        </div>
+        <div class="input-field">
+            <label>Championships:</label>
+            <input type="text" name="Championships" size="50" placeholder="Must be a number...">
+        </div>
+        <div class="input-field">
+            <label>State:</label>
+            <input type="text" name="State" size="25" placeholder="State Name...">
+        </div>
+        <div class="input-field">
+            <label>Stadium:</label>
+            <input type="text" name="Stadium" size="25" placeholder="Stadium Name...">
+        </div>
+        <div class="input-field">
+            <label>Players:</label>
+            <input type="text" name="Players" size="50" placeholder="Player1,Player2,Player3 (seperated by commas)">
+        </div>
+        <button type="submit">Create Team </button>
+    </form>
+    <script>
+      $("#search").prop('disabled', true);
+    </script>
+</article>

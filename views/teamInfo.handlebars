@@ -1,0 +1,11 @@
+<article>
+  <h1>{{team.Name}}</h1>
+  <p><label>State: </label><a href="/state/{{team.State}}">{{team.State}}</a></p>
+  <p><label>Sport: </label><a href="/sport/{{team.Sport}}">{{team.Sport}}</a></p>
+  <p><label>Stadium: </label>{{team.Stadium}}</p>
+  <p><label>Number of Championships: </label>{{team.Championships}}</p>
+  <h3>Players</h3>
+  {{#each team.Players}}
+    <p>{{this}}</p>
+  {{/each}}
+</article>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+    <title>Final Project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<div class = "nav">
+  <div>
+      <a href="/Players">Players</a>
+      <a href="/Sports">Sports</a>
+      <a href="/States">States</a>
+      <a href="/Alphabetical">Alphabetical</a>
+      <a href="/Championships">Championships</a>
+      <label>Search:</label>
+      <input type="text" id="search">
+  </div>
+</div>
+<body>
+  <button type="button" id="createNew">Enter a Team</button>
+  {{{body}}}
+  <h3 id="noitems" hidden="true">No items matched your search!</h3>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script>
+    $('#createNew').on('click', function() {
+      window.location = '/create'
+    })
+
+    $('#search').on('keyup', function() {
+      var name = $('#search').val().toUpperCase();
+      var allHidden = true;
+      var items = $('p')
+      var txtVal;
+      for (var i = 0; i < items.length; i++) {
+        txtVal = items[i].innerText.toUpperCase()
+        console.log(txtVal);
+        if (!txtVal.startsWith(name)) {
+          items[i].style.display = 'none'
+        } else {
+          items[i].style.display = 'block'
+        }
+      }
+      for (var j = 0; j < items.length; j++) {
+        if (items[j].style.display == 'block') {
+          allHidden = false;
+        }
+      }
+      if (allHidden && name != "") {
+        $('#noitems').show()
+      } else {
+        $('#noitems').hide()
+      }
+    })
+  </script>
+</body>
+</html>
